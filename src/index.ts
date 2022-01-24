@@ -1,13 +1,13 @@
-import express from "express";
-import coursesRouter from "./modules/courses/cources.routes";
+import express, { Request, Response } from "express";
+import coursesRouter from "./modules/courses/course.routes";
 
 const app = express();
 
 app.use(express.json());
 app.use("/api/courses", coursesRouter);
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
+app.get("/", (req: Request, res: Response) => {
+  res.send("Welcome");
 });
 
 // PORT
